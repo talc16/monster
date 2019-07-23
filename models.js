@@ -9,7 +9,7 @@ class Monster {
         this.imageUrl = imageUrl
         this.x = pos.x
         this.y = pos.y
-        d
+
 
     }
 
