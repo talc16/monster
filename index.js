@@ -97,4 +97,5 @@ Object.prototype.len = function() {
     }
     count--
     return count
+    
 };
