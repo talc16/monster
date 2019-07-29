@@ -1,5 +1,3 @@
-
-
 let selected = ""
 if (selected) colorSelected(selected)
 const mainBoard = document.querySelector("#main");
@@ -17,7 +15,7 @@ const monster4 = new Monster("poki", "in red",
 const monsters = [];
 
 
-document.getElementById("clickRandom").addEventListener("click", function () {
+document.getElementById("clickRandom").addEventListener("click", function() {
     randomPlace()
 });
 
@@ -29,14 +27,14 @@ function randomNumber(multi) {
 monsters.push(monster1, monster2, monster3, monster4)
 
 
-monsters.forEach(function (monster) {
+monsters.forEach(function(monster) {
     console.log(monster)
 });
 
 function draw(arr) {
     mainBoard.innerHTML = "";
-    arr.forEach(function (monster) {
-        mainBoard.append(monster.getCard(300, 300))
+    arr.forEach(function(monster) {
+        mainBoard.append(monster.getCard(200, 200))
 
     });
 }
@@ -46,11 +44,12 @@ draw(monsters)
 
 
 function randomPlace() {
-    monsters.forEach(function (monster) {
-        monster.randomLocation(randomNumber(1000), randomNumber(1000))
+    monsters.forEach(function(monster) {
+        monster.randomLocation(randomNumber(1800), randomNumber(1000))
         draw(monsters)
     });
 };
+
 function moveThis(monster, x, y) {
     monster.newLocation(x, y)
     draw(monsters)
@@ -73,7 +72,7 @@ function colorSelected(monsterSelect) {
 function keyDown(monsterSelect) {
     colorSelected(monsterSelect)
 
-    document.onkeydown = function (e) {
+    document.onkeydown = function(e) {
         switch (e.keyCode) {
             case 37:
                 monsterSelect.buttonClickLeft()
@@ -91,4 +90,11 @@ function keyDown(monsterSelect) {
     };
 }
 
-
+Object.prototype.len = function() {
+    let count = 0
+    for (let obj in Object.keys(this)) {
+        count++
+    }
+    count--
+    return count
+};
