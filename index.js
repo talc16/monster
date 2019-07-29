@@ -34,7 +34,7 @@ monsters.forEach(function(monster) {
 function draw(arr) {
     mainBoard.innerHTML = "";
     arr.forEach(function(monster) {
-        mainBoard.append(monster.getCard(200, 200))
+        mainBoard.append(monster.getCard(150, 150))
 
     });
 }
@@ -97,4 +97,5 @@ Object.prototype.len = function() {
     }
     count--
     return count
+
 };
